@@ -18,15 +18,12 @@ func main() {
 func part1(lines []string) {
 	total := 0
 	for i := 0; i < len(lines); i++ {
-		//fmt.Printf("%v\n", lines[i])
 
 		numbers := strings.Split(strings.TrimSpace(lines[i]), " ")
 
 		if isSafe(numbers) {
 			total++
 		}
-		//fmt.Printf("Dec: %v | Inc: %v\n", dec, inc)
-		/*fmt.Printf("Numbers: %v | Total: %v\n", lines[i], total)*/
 	}
 	fmt.Printf("%v reports are safe\n", total)
 }
@@ -34,15 +31,12 @@ func part1(lines []string) {
 func part2(lines []string) {
 	total := 0
 	for i := 0; i < len(lines); i++ {
-		//fmt.Printf("%v\n", lines[i])
 
 		numbers := strings.Split(strings.TrimSpace(lines[i]), " ")
 
 		if isSafe(numbers) || isSafeWithDampener(numbers) {
 			total++
 		}
-		//fmt.Printf("Dec: %v | Inc: %v\n", dec, inc)
-		/*fmt.Printf("Numbers: %v | Total: %v\n", lines[i], total)*/
 	}
 	fmt.Printf("Thanks to the Problem Dampener, %v reports are actually safe!\n", total)
 }
