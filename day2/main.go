@@ -6,10 +6,11 @@ import (
 	"os"
 	"strconv"
 	"strings"
+	"utils"
 )
 
 func main() {
-	var lines = readFile(os.Args[1])
+	var lines = utils.ReadFile(os.Args[1])
 	part1(lines)
 	part2(lines)
 }
@@ -86,16 +87,4 @@ func abs(x int) int {
 		return x * -1
 	}
 	return x
-}
-
-func readFile(fileName string) []string {
-	var lines []string
-
-	file, err := os.ReadFile(fileName)
-	if err != nil {
-		log.Fatal(err)
-	}
-	lines = strings.Split(strings.TrimSpace(string(file)), "\n")
-
-	return lines
 }

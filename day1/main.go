@@ -1,17 +1,16 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"log"
 	"os"
 	"regexp"
 	"sort"
 	"strconv"
+	"utils"
 )
 
 func main() {
-	var input = readFile(os.Args[1])
+	input := utils.ReadFile(os.Args[1])
 
 	var l, r []int
 
@@ -71,24 +70,4 @@ func abs(x, y int) int {
 		return x - y
 	}
 	return y - x
-}
-
-func readFile(fileName string) []string {
-	var lines []string
-
-	file, err := os.Open(fileName)
-	if err != nil {
-		log.Fatal(err)
-	}
-	defer file.Close()
-
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		lines = append(lines, scanner.Text())
-	}
-
-	if err := scanner.Err(); err != nil {
-		log.Fatal(err)
-	}
-	return lines
 }
